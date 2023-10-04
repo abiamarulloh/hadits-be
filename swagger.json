@@ -1,0 +1,363 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API Hadist shahih muslim, shahih bukhari dan sunan tirmidzi",
+    "version": "1.0",
+    "title": "Swagger Hadist App",
+    "contact": {
+      "email": "abiamarulloh06@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "description": "Local server"
+    },
+    {
+      "url": "https://hadist-app-backend.herokuapp.com/api",
+      "description": "Production Env"
+    }
+  ],
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "hadist-shahih-muslim",
+      "description": "Hadist Shahih Muslim"
+    },
+    {
+      "name": "hadist-shahih-bukhari",
+      "description": "Hadist Shahih Bukhari"
+    },
+    {
+      "name": "hadist-sunan-tirmidzi",
+      "description": "Hadist Sunan Tirmidzi"
+    }
+  ],
+  "schemes": ["http", "https"],
+  "paths": {
+    "/api/hadist/shahih-muslim": {
+      "get": {
+        "tags": ["hadist-shahih-muslim"],
+        "summary": "Get hadist muslim",
+        "description": "Get hadist shahih muslim",
+        "operationId": "getHadist",
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "search",
+            "description": "The search that needs to be fetched ",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      },
+      "post": {
+        "tags": ["hadist-shahih-muslim"],
+        "summary": "Create hadist muslim",
+        "description": "create hadist shahih muslim",
+        "operationId": "createHadist",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create hadist object",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["hadist-shahih-muslim"],
+        "summary": "Updated hadist muslim",
+        "description": "update hadist shahih muslim",
+        "operationId": "updateHadist",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id hadist type that need to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated hadist object",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["hadist-shahih-muslim"],
+        "summary": "Delete hadist muslim",
+        "description": "delete hadist shahih muslim",
+        "operationId": "deleteHadist",
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The name that needs to be deleted",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      }
+    },
+    "/api/hadist/shahih-bukhari": {
+      "get": {
+        "tags": ["hadist-shahih-bukhari"],
+        "summary": "Get hadist bukhari",
+        "description": "Get hadist shahih bukhari",
+        "operationId": "getHadist",
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "search",
+            "description": "The search that needs to be fetched ",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      },
+      "post": {
+        "tags": ["hadist-shahih-bukhari"],
+        "summary": "Create hadist bukhari",
+        "description": "create hadist shahih bukhari",
+        "operationId": "createHadist",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create hadist object",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["hadist-shahih-bukhari"],
+        "summary": "Updated hadist bukhari",
+        "description": "update hadist shahih bukhari",
+        "operationId": "updateHadist",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id hadist type that need to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated hadist object",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["hadist-shahih-bukhari"],
+        "summary": "Delete hadist bukhari",
+        "description": "delete hadist shahih bukhari",
+        "operationId": "deleteHadist",
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id that needs to be deleted",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      }
+    },
+    "/api/hadist/sunan-tirmidzi": {
+      "get": {
+        "tags": ["hadist-sunan-tirmidzi"],
+        "summary": "Get hadist tirmidzi",
+        "description": "Get hadist sunan tirmidzi",
+        "operationId": "getHadist",
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "search",
+            "description": "The search that needs to be fetched ",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      },
+      "post": {
+        "tags": ["hadist-sunan-tirmidzi"],
+        "summary": "Create hadist tirmidzi",
+        "description": "create hadist sunan tirmidzi",
+        "operationId": "createHadist",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create hadist object",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["hadist-sunan-tirmidzi"],
+        "summary": "Updated hadist tirmidzi",
+        "description": "update hadist sunan tirmidzi",
+        "operationId": "updateHadist",
+        "consumes": ["application/json"],
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id hadist type that need to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated hadist object",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["hadist-sunan-tirmidzi"],
+        "summary": "Delete hadist tirmidzi",
+        "description": "delete hadist sunan tirmidzi",
+        "operationId": "deleteHadist",
+        "produces": ["application/json", "application/xml"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id that needs to be deleted",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid hadist supplied"
+          },
+          "404": {
+            "description": "hadist not found"
+          }
+        }
+      }
+    }
+  }
+}
